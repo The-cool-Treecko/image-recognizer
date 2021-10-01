@@ -1,0 +1,19 @@
+body {
+    background: linear-gradient(dodgerblue, cornflowerblue, blue);
+    color: white;
+}
+
+.heading {
+    width: 100%;
+    font-size: 22px;
+}
+
+#camera {
+    border: dashed 2px white;
+}
+
+.list_of_objects,
+#object,
+#accuracy {
+    color: black;
+}
