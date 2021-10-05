@@ -23,4 +23,20 @@ function model_loaded() {
 
 var classifier = ml5.imageClassifier(
     'https://teachablemachine.withgoogle.com/models/BlR8l4bkB/model.json',
-    model_loaded)
+    model_loaded);
+
+function identify(){
+    img = document.getElementById("image");
+    classifier.classify(img, gotResult);  
+}
+
+function gotResult(error, results){
+    if (error) {
+        console.error(error);
+    }
+    else {
+        console.log(results);
+        document.getElementById("object").innerHTML = results[0].label;
+        document.getElementById("accuracy").innerHTML = results[0].confidence.toFixed(2);
+    }
+}
